@@ -1,0 +1,183 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* section {
+    width: 5vw;
+    height: 5vh;
+    background: black;
+    position: fixed;
+    left: 1rem;
+    bottom: 1rem;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+section:hover {
+    background: yellowgreen;
+}
+
+section:hover ~ main {
+    left: 0;
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    background: #304834;
+    position: fixed;
+    top: 0;
+    left: 100vw;
+    transition: .3s ease-in-out;
+} */
+
+main {
+    display: grid;
+    gap: 1rem;
+    justify-content: end;
+    padding-right: 1rem;
+    height: 100vh;
+    /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr; */
+    align-items: center;
+}
+
+.circle {
+    width: 4vw;
+    height: 4vw;
+    border-radius: 50%;
+    background: brown;
+    border: 2px solid white;
+    display: grid;
+    place-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: .6rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.sections div h1 {
+    opacity: 0;
+}
+
+.circle:hover ~ .sections div h1 {
+    animation: fadeIn .4s .5s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-2rem)
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+.circle:nth-child(1) {
+    background: #304834;
+}
+
+.circle:nth-child(1):hover ~ .sections .left{
+    left: 0;
+}
+
+.circle:nth-child(2) {
+    background: brown;
+}
+
+.circle:nth-child(2):hover ~ .sections .right{
+    right: 0;
+    z-index: -1;
+}
+
+.circle:nth-child(3) {
+    background: darkblue;
+}
+
+.circle:nth-child(3):hover ~ .sections .bottom{
+    bottom: 0;
+    /* z-index: -1; */
+}
+
+.circle:nth-child(4) {
+    background: darkgoldenrod;
+}
+
+.circle:nth-child(4):hover ~ .sections .top{
+    top: 0;
+    /* z-index: -1; */
+}
+
+.circle:nth-child(5) {
+    background: tomato;
+    z-index: 1;
+}
+
+.circle:nth-child(5):hover ~ .sections .left {
+    left: 0;
+}
+
+.circle:nth-child(5):hover ~ .sections .right {
+    right: 0;
+}
+
+.circle:nth-child(5):hover ~ .sections .bottom {
+    bottom: 0;
+}
+
+.circle:nth-child(5):hover ~ .sections .top {
+    top: 0;
+}
+
+.sections div {
+    position: fixed;
+    /* left: 100vw; */
+    display: grid;
+    place-items: center;
+    color: white;
+    transition: .5s ease-in-out;
+}
+
+.sections div.left {
+    top: 0;
+    left: -40vw;
+    width: 40vw;
+    height: 100vh;
+    background: #304834;
+}
+
+.sections div.right {
+    top: 0;
+    right: -60vw;
+    width: 60vw;
+    height: 100vh;
+    background: brown;
+    z-index: -2;
+}
+
+.sections div.bottom {
+    top: 100;
+    left: 0;
+    bottom: -20vh;
+    width: 100vw;
+    height: 20vh;
+    background: darkblue;
+}
+
+.sections div.top {
+    left: 0;
+    top: -50vw;
+    width: 100vw;
+    height: 50vh;
+    background: darkgoldenrod;
+    z-index: -2;
+}
